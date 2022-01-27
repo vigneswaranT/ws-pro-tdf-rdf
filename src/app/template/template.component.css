@@ -1,0 +1,16 @@
+.container{
+    padding-left: 50px;
+    margin-left: 200px;
+    width: 500px;
+    background-color: greenyellow;
+    border: 2px solid black;
+     
+
+}
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+
+input.ng-valid{
+    border-left: 5px solid green;
+}

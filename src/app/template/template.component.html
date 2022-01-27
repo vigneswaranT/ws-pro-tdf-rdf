@@ -1,0 +1,155 @@
+<form  #form = 'ngForm'> 
+    <h2>simple login form</h2>
+
+<div class="container">
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="FirstName">First Name:</label>
+        <div class="col-sm-10">
+            <input type="text" #firstName="ngModel" minlength="2" maxlength="10" class="form-control" required
+                placeholder="Enter first name" name="firstName" ngModel>
+            <div>
+                  <span class="text text-danger" *ngIf="firstName.touched && firstName.invalid"> name id Requried
+                </span>
+            </div>
+            <div *ngIf="firstName.errors && firstName.dirty">
+
+                <div class="alert-danger" *ngIf="firstName.errors?.['required']">Name is required</div>
+                <div class="alert-danger" *ngIf="firstName.errors?.['minlength']">Name should have minimum 2
+                    characters </div>
+            </div>
+        </div>
+        <div *ngIf="firstName.valid">
+            <div class="alert-success" *ngIf="firstName.valid">Name success</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="LastName">Last Name:</label>
+        <div class="col-sm-10">
+            <input type="text" #lastName="ngModel" minlength="2" maxlength="10" class="form-control" required
+                placeholder="Enter last name" name="lastName" ngModel>
+            <div>
+                <span class="text text-danger" *ngIf="lastName.touched && lastName.invalid"> name id Requried
+                </span>
+            </div>
+            <div *ngIf="lastName.errors && lastName.dirty">
+
+                <div class="alert-danger" *ngIf="lastName.errors?.['required']">Name is required</div>
+                <div class="alert-danger" *ngIf="lastName.errors?.['minlength']">Name should have minimum 2
+                    characters </div>
+
+            </div>
+        </div>
+        <div *ngIf="lastName.valid">
+            <div class="alert-success" *ngIf="lastName.valid">Name success</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Email">Email id:</label>
+        <div class="col-sm-10">
+            <input type="email" #email="ngModel" minlength="10" maxlength="19" class="form-control" required
+                placeholder="Enter email id" name="email" ngModel>
+            <div>
+                <span class="text text-danger" *ngIf="email.touched && email.invalid"> email id Requried
+                </span>
+            </div>
+            <div *ngIf="email.errors && email.dirty">
+
+                <div class="alert-danger" *ngIf="email.errors?.['minlength']">email should have minimum 10
+                    characters </div>
+
+            </div>
+        </div>
+        <div *ngIf="email.valid">
+            <div class="alert-success" *ngIf="email.valid">email id success</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="password">password:</label>
+        <div class="col-sm-10">
+            <input type="password" #password="ngModel" minlength="8" maxlength="12" class="form-control" required
+                placeholder="Enter password" name="password" ngModel >
+            <div>
+                <span class="text text-danger" *ngIf="password.touched && password.invalid"> password Requried
+                </span>
+            </div>
+            <div *ngIf="password.errors && password.dirty">
+
+                <div class="alert-danger" *ngIf="password.errors?.['maxlength']">password should have minimum 8
+                    characters </div>
+                <div *ngIf="password.valid">
+                    <div class="alert-success" *ngIf="password.valid">password success</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="phone">phoneNumber:</label>
+        <div class="col-sm-10">
+            <input type="number" #phoneNumber="ngModel" minlength="10" maxlength="10" class="form-control" required
+                placeholder="Enter phoneNumber" name="phoneNumber" ngModel #phone>
+            <div>
+                <span class="text text-danger" *ngIf="phoneNumber.touched && phoneNumber.invalid"> phoneNumber Requried
+                </span>
+            </div>
+            <div *ngIf="phoneNumber.errors && phoneNumber.dirty">
+
+                <div class="alert-danger" *ngIf="phoneNumber.errors?.['maxlength']">phoneNumber should have minimum 10
+                    characters </div>
+                <div *ngIf="phoneNumber.valid">
+                    <div class="alert-success" *ngIf="phoneNumber.valid">phoneNumber success</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="address">address:</label>
+        <div class="col-sm-10">
+            <input type="text" #address="ngModel" minlength="10" maxlength="10" class="form-control" required
+                placeholder="Enter address" name="addressr" ngModel #addres>
+
+            <div *ngIf="address.errors && address.dirty">
+
+                <div class="alert-danger" *ngIf="address.errors?.['minlength']">address 10
+                    characters </div>
+            </div>
+        
+        <div *ngIf="address .valid">
+            <div class="alert-success" *ngIf="address .valid">address success</div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="zipcode">Zipcode:</label>
+        <div class="col-sm-10">
+            <input type="text" #zipcode="ngModel"
+             minlength="6" class="form-control" required
+                placeholder="Enter zipcode" name="zipcode" ngModel #zip>
+            <div>
+                <span class="text text-danger" *ngIf="zipcode.touched && zipcode.invalid"> zipcode Requried
+                </span>
+            </div>
+            <h2>welcome</h2>
+            <div *ngIf="zipcode.errors && zipcode.dirty">
+
+                <div class="alert-danger" *ngIf="zipcode.errors?.['minlength']">zipcode should have minimum 6
+                    characters </div>
+                <div *ngIf="zipcode.valid">
+                    <div class="alert-success" *ngIf="zipcode.valid">zipcode success</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{vike}}
+   
+    <div>
+        <button type="submit" class="btn-success" [disabled]="!form.valid" (click)="abc()" >Submit</button>
+        
+        </div>
+      
+</div>
+
+
+</form>
